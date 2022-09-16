@@ -1,0 +1,12 @@
+public class Main
+{
+    public static void main (String[]args)
+    {
+        double a = 100.04;
+        long b = (long) a;
+        int c = (int) b;
+        System.out.println ("Double Value is : " + a);
+        System.out.println ("Long Value is : " + b);
+        System.out.println ("Integer Value is : " + c);
+    }
+}
