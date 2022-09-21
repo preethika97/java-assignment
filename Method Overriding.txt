@@ -1,0 +1,25 @@
+package javaprogram;
+class Parents
+{
+    void bankBalance ()
+    {
+    	System.out.println("20 lakhs");
+    }
+}
+
+class child extends Parents
+{
+    void bankBalance ()
+    {
+        System.out.println ("50 lakhs");
+    }
+}
+
+class Overriding
+{
+    public static void main (String args[])
+    {
+        child c = new child();
+        c.bankBalance();
+    }
+}
