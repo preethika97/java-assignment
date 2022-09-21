@@ -1,0 +1,16 @@
+class Sum{  
+  int add(int a)
+     {
+	  return a;
+	  }  
+    int add(int a,int b)
+    { 
+	  return a+b;
+	  }    
+  public static void main(String[] args){  
+   Sum obj=new Sum(); 
+   System.out.println("hell");
+   obj.add(1,2);
+   obj.add(2);
+     }
+  }
