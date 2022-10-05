@@ -1,0 +1,53 @@
+package Whatsapp;
+
+public class WhatsappDetails {
+
+	private int mobilenumber;
+	private String name;
+	private String email;
+	private int otp;
+
+	WhatsappDetails(int mobilenumber, String name, String email, int otp) {
+		this.mobilenumber = mobilenumber;
+		this.name = name;
+		this.email = email;
+		this.otp = otp;
+	}
+
+	WhatsappDetails() {
+
+	}
+
+	public int getMobilenumber() {
+		return mobilenumber;
+	}
+
+	public void setMobilenumber(int mobilenumber) {
+		this.mobilenumber = mobilenumber;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public int getOtp() {
+		return otp;
+	}
+
+	public void setOtp(int otp) {
+		this.otp = otp;
+	}
+
+}
