@@ -1,0 +1,127 @@
+package Whatsapp;
+
+import java.util.*;
+
+public class Process {
+	Scanner s = new Scanner(System.in);
+
+	ArrayList<WhatsappDetails> Verification = new ArrayList<>();
+	HashMap<String, Integer> consave = new HashMap<>();
+	boolean a = true;
+	boolean b = false;
+	boolean c = true;
+
+	Process() {
+
+		Verification.add(new WhatsappDetails(1234567890, "Ananthi", "anathi@gmail.com", 123));
+		Verification.add(new WhatsappDetails(1234567855, "madhu", "madhu@gmail.com", 987789));
+		Verification.add(new WhatsappDetails(1234567880, "moni", "moni@gmail.com", 736438));
+		Verification.add(new WhatsappDetails(1236667890, "preethi", "preethi@gmail.com", 746348));
+
+	}
+
+	public void Setup() {
+
+		while (a) {
+			System.out.println("1.Login\n2.exit\n");
+			System.out.println("enter any option");
+			int option = s.nextInt();
+			switch (option) {
+			case 1:
+				System.out.println("Enter the MobileNumber: ");
+				int mobno = s.nextInt();
+				System.out.println("Enter the OTP : ");
+				int otp = s.nextInt();
+				login(mobno, otp);
+				break;
+
+			case 2: {
+				a = false;
+				break;
+			}
+			}
+
+		}
+	}
+
+	public void login(int mobno, int otp) {
+		for (WhatsappDetails user : Verification) {
+			if (user.getMobilenumber() == mobno && user.getOtp() == otp) {
+				b = true;
+				a = false;
+			}
+		}
+
+		System.out.println(b == true && a == false ? "Login successfull" : "Invalid login Please Try Again!");
+		if (b == true) {
+
+			while (c) {
+				System.out.println("1.Save Contact\n2.View Contact\n3.Chat\n4.Exit\n");
+				int swi = s.nextInt();
+				switch (swi) {
+				case 1: {
+					System.out.println("Enter the MobileNumber: ");
+					int saveno = s.nextInt();
+					System.out.println("Enter the Name : ");
+					String savename = s.next();
+					Savecontact(savename, saveno);
+					break;
+				}
+				case 2: {
+					Viewcontact();
+					break;
+				}
+				case 3: {
+					Wchat();
+					break;
+				}
+				case 4: {
+					c = false;
+					break;
+				}
+				}
+			}
+
+		}
+	}
+
+	public void Savecontact(String b, int a) {
+
+		consave.put(b, a);
+		System.out.println("Contact saved successfully");
+
+	}
+
+	public void Viewcontact() {
+
+		int i = 0;
+		Set<Map.Entry<String, Integer>> keys = consave.entrySet();
+		for (Map.Entry<String, Integer> y : keys) {
+			++i;
+			System.out.println(i + "." + y.getKey() + " : " + y.getValue());
+
+		}
+	}
+
+	public void Wchat() {
+		c = false;
+		int j = 0;
+		Set<Map.Entry<String, Integer>> keys = consave.entrySet();
+		for (Map.Entry<String, Integer> y : keys) {
+			++j;
+			System.out.println(j + "." + y.getKey());
+		}
+		System.out.println("Enter Name To chat");
+		int ipt = s.nextInt();
+		if (ipt >= 1 && ipt >= 50)
+			System.out.println("Type a Message :");
+		String type = s.next();
+		System.out.println("Message sent!");
+
+	}
+
+	public void register(int mobilenumber, String name) {
+
+	}
+
+}
